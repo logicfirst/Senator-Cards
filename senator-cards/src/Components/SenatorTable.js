@@ -22,7 +22,15 @@ class SenatorTable extends Component{
           <tbody>
             {this.props.senatorData.map(senator => 
               <tr key={this.props.senatorData.id}>
-                <td>{senator.first_name}</td>
+                <td>{senator.first_name} {senator.last_name}</td>
+                <td>{senator.id}</td>
+                <td>{senator.title}</td>
+                <td>{senator.state}</td>
+                <td>{senator.party}</td>
+                <td>{senator.gender}</td>
+                <td>{senator.date_of_birth}</td>
+                <td>{senator.missed_votes_pct}</td>
+                <td>{senator.votes_with_party_pct}</td>
               </tr>)}
             
           </tbody>
