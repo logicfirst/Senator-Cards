@@ -1,0 +1,11 @@
+.card {
+  display: inline-grid;
+  flex: 0 1 30%;
+  width: 8rem;
+  height: 17rem;
+  margin: 1rem;
+  padding: 10px;
+  text-align: center;
+  background-color: bisque;
+  box-shadow: 0 4px 8px rgb(0,0,0);
+}

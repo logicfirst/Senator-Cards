@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SenatorTable from './SenatorTable'
+import SenatorCards from './SenatorCards'
 
 class Senators extends Component {
 
@@ -17,6 +18,7 @@ class Senators extends Component {
     return(
       <div>
         <SenatorTable senatorData={this.state.senatorData}/>
+        <SenatorCards senatorData={this.state.senatorData}/>
       </div>
     )
   }
