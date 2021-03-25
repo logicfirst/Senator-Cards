@@ -5,7 +5,7 @@ class SenatorTable extends Component{
   render(){
     return(
       <div>
-        <table border='1'>
+        <table border='1px'>
           <thead>
             <tr>
               <th>Name</th>
@@ -19,7 +19,8 @@ class SenatorTable extends Component{
               <th>Votes with Party Percentage</th>
             </tr>
           </thead>
-          <tbody>
+        
+          <tbody className='table-body'>
             {this.props.senatorData.map(senator => 
               <tr key={this.props.senatorData.id}>
                 <td>{senator.first_name} {senator.last_name}</td>
@@ -32,7 +33,6 @@ class SenatorTable extends Component{
                 <td>{senator.missed_votes_pct}</td>
                 <td>{senator.votes_with_party_pct}</td>
               </tr>)}
-            
           </tbody>
         </table>
       </div>
