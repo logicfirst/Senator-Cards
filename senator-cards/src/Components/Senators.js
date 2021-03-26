@@ -1,26 +1,24 @@
-import React, {Component} from 'react'
+import React, {useMemo, useEffect, useState} from 'react'
 import SenatorTable from './SenatorTable'
 import SenatorCards from './SenatorCards'
+import '../App.css'
 
-class Senators extends Component {
+function Senators(props) {
 
-  state = {
-    senatorData: []
-  }
+  const [senatorData, setSenatorData] = useState([]);
 
-  componentDidMount(){
+  useEffect(() => {
     fetch('http://localhost:3000/senators')
     .then(res => res.json())
-    .then((senatorData) => {this.setState({senatorData})})
-  }
-
-  render(){
+    .then((senatorData) => setSenatorData(senatorData))
+  })
+  
     return(
       <div>
-        <SenatorTable senatorData={this.state.senatorData}/>
-        <SenatorCards senatorData={this.state.senatorData}/>
+        <SenatorTable senatorData={senatorData}/>
+        <SenatorCards senatorData={senatorData}/>
       </div>
     )
-  }
+  
 }
 export default Senators

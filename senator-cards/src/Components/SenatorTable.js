@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
+import React, {useMemo, useEffect, useState} from 'react'
 import './Card.css'
 
-class SenatorTable extends Component{
+function SenatorTable(props){
 
-  render(){
+  
     return(
       <div>
-        <table className='senator-table'>
+        <table>
           <thead>
             <tr>
               <th>Name</th>
@@ -22,8 +22,8 @@ class SenatorTable extends Component{
           </thead>
         
           <tbody>
-            {this.props.senatorData.map(senator => 
-              <tr key={this.props.senatorData.id}>
+            {props.senatorData.map(senator => 
+              <tr key={props.senatorData.id}>
                 <td>{senator.first_name} {senator.last_name}</td>
                 <td>{senator.id}</td>
                 <td>{senator.title}</td>
@@ -38,6 +38,6 @@ class SenatorTable extends Component{
         </table>
       </div>
     )
-  }
-}
+ }
+
 export default SenatorTable
