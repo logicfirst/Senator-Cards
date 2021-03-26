@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import './Card.css'
 
 class SenatorTable extends Component{
 
   render(){
     return(
       <div>
-        <table border='1px'>
+        <table className='senator-table'>
           <thead>
             <tr>
               <th>Name</th>
@@ -20,7 +21,7 @@ class SenatorTable extends Component{
             </tr>
           </thead>
         
-          <tbody className='table-body'>
+          <tbody>
             {this.props.senatorData.map(senator => 
               <tr key={this.props.senatorData.id}>
                 <td>{senator.first_name} {senator.last_name}</td>
