@@ -1,7 +1,7 @@
 import React, {useMemo, useEffect, useState} from 'react'
 import SenatorTable from './SenatorTable'
 import SenatorCards from './SenatorCards'
-import '../App.css'
+
 
 function Senators(props) {
 
@@ -21,39 +21,39 @@ function Senators(props) {
         columns: [
           {
             Header: "Name",
-            accessor: "senator.first_name"
+            accessor: senator => `${senator.first_name} ${senator.last_name}`
           },
           {
             Header: "ID",
-            accessor: "senator.id"
+            accessor: senator => senator.id
           },
           {
             Header: "Title",
-            accessor: "senator.title"
+            accessor: senator => senator.title
           },
           {
             Header: "State",
-            accessor: "senator.state"
+            accessor: senator => senator.state
           },
           {
             Header: "Party",
-            accessor: "senator.party"
+            accessor: senator => senator.party
           },
           {
             Header: "Gender",
-            accessor: "senator.gender"
+            accessor: senator => senator.gender
           },
           {
             Header: "Date of Birth",
-            accessor: "senator.date_of_birth"
+            accessor: senator => senator.date_of_birth
           },
           {
             Header: "Missed Votes Percentage",
-            accessor: "senator.missed_votes_pct"
+            accessor: senator => senator.missed_votes_pct
           },
           {
             Header: "Votes with Party Percentage",
-            accessor: "senator.votes_with_party_pct"
+            accessor: senator => senator.votes_with_party_pct
           }
         ]
       } 

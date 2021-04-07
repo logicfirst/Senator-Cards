@@ -1,6 +1,6 @@
 import React from 'react'
-import '../Card.css'
 import {useTable} from 'react-table'
+import '../App.css'
 
 function SenatorTable({columns, data}){
 
@@ -18,7 +18,7 @@ function SenatorTable({columns, data}){
   
     return(
       <table {...getTableProps()}>
-      <thead>
+      <thead className='App'>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
@@ -27,7 +27,7 @@ function SenatorTable({columns, data}){
           </tr>
         ))}
       </thead>
-      <tbody {...getTableBodyProps()}>
+      <tbody className='Data' {...getTableBodyProps()}>
         {rows.map((row, i) => {
           prepareRow(row);
           return (
