@@ -4,6 +4,10 @@
 
 .Data {
   text-align: left;
+  
+}
+
+tr:nth-child(even) {background: rgba(70, 120, 245, 0.623);
 }
 
 .App-logo {
